@@ -1,4 +1,9 @@
+"use client";
+import { Input } from "@repo/ui/Input";
+import { useRouter } from "next/navigation";
+
 export default function Home() {
+  const route = useRouter();
   return (
     <div
       style={{
@@ -17,19 +22,19 @@ export default function Home() {
           border: "1px solid black",
           display: "flex",
           justifyContent: "center",
-          padding: 4,
+          padding: 3,
           gap: 5,
         }}
       >
-        <input
-          type="text"
-          style={{
-            height: "20px",
+        <Input
+          placeholder="messsage"
+          onChange={() => {
+            route.push("chat/123");
           }}
         />
         <button
           style={{
-            height: "25px",
+            height: "24px",
           }}
         >
           Send
